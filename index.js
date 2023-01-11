@@ -8,8 +8,8 @@ let elementsH2 = document.getElementsByTagName("h2");
 
 let elementsClassRed = document.getElementsByClassName("text-red");
 
-// Au click sur le sous titre
 let elementID = document.getElementById("sous-titre-DOM");
+
 elementID.addEventListener("click", function () {
   let p = document.createElement("p");
   p.classList.add("text-red");
