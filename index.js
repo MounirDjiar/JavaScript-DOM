@@ -24,7 +24,6 @@ let elementIDEventListener = document.getElementById("event-listener");
 
 function changeColorLeftAndRight(elt) {
   elt.addEventListener("mousemove", function (evt) {
-    let widthWindow = window.innerWidth;
     let side = getPositionRightOrLeft(evt.x, evt.y, widthWindow);
 
     if (side == "DROITE") {
@@ -41,8 +40,12 @@ function backToRedColor(elt) {
   });
 }
 
-changeColorLeftAndRight(elementIDEventListener);
-backToRedColor(elementIDEventListener);
+let redArrayElements = document.getElementsByClassName("text-red");
+
+for (let element of redArrayElements) {
+  changeColorLeftAndRight(element);
+  backToRedColor(element);
+}
 
 elementIDEventListener.onmousedown = function (event) {
   let x = event.x;
